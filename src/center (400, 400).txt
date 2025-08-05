@@ -1,0 +1,72 @@
+center (400, 400)
+image start(200, 200)
+image end(600, 600)
+
+image coordinates: 
+a (200, 200)
+b (200. 600)
+c (600, 200)
+d (600, 600)
+
+gradient: start value = 0
+          end value = 255
+
+gives: 
+horizontal gradient image 
+
+
+LINES
+
+length of lines = 10
+
+position of each line:
+	starting from 0
+	second line starts at 20
+	third line starts at 40
+
+i grows as i += 20
+
+i.e. each line has a gap of 10 pixels 
+each row has a gap of 10 too.
+
+j grows as k += 10
+
+window size = 800 x 800
+
+so total lines in row = 800/20 = 40 
+total rows of lines = 800/10
+
+now give random angle to each line
+
+range of angles (0, 360) 
+i.e. (0, 2pi) in radians
+
+use random to select a random angle from (0, 360)
+then convert it to radian
+use that angle to calculate the x_end and y_end of the line
+
+original x_end and y_end will be the maximum lengths
+
+x_end = x_start + (line length)*cos(angle)
+y_end = y_start + (line length)*sin(angle) 
+
+
+until now, we have created array of lines in the display with all the lines pointing in different directions but with same length
+
+to rotate each line at its position like hand of a clock:
+make each line an object 
+store its coordinates 
+and then update those coordinates for each object to animate them. 
+
+To make those lines as objects, i have created a class Physics.Lines.helpers.LineSegment which stores the values of lines and also creates a line with add line method.
+
+-- 
+make an updater method and add it to each line object.. 
+--
+now make an updater method which updates the values of coordinates of lines to make them rotate about their origin.
+then use this updater inside the draw function to run continuously so that it updates the values of coordinates everytime the draw function runs.
+
+
+-- 
+added an angle attribute to the object to store the angle of the line at which it is previously kept
+so that updater can use that value to update to the next angle of the line.
