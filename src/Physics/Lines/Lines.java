@@ -8,7 +8,7 @@ import processing.core.*;
 import java.util.ArrayList;
 
 public class Lines extends PApplet{
-    int lineLength = 2;
+    int lineLength = 10;
     int columns = 600;
     int rows = 600;
     ArrayList<LineSegment> lines = new ArrayList<>();
@@ -28,8 +28,8 @@ public class Lines extends PApplet{
         stroke(255);
         for (int i = 200; i<columns; i += lineLength*2){
             for (int j = 200; j<rows; j += lineLength*2){
-                float a = random(0, 360);
-//                float a = 0;
+//                float a = random(0, 360);
+                float a = 0;
                 float angle_x = lineLength*cos(radians(a));
                 float angle_y = lineLength*sin(radians(a));
                 LineSegment l = new LineSegment(this, i, j, i + angle_x, j + angle_y, lineLength);
@@ -53,7 +53,9 @@ public class Lines extends PApplet{
         }
 
         for (Dot d : dots){
+            stroke(255, 0, 0);
             d.adddot();
+//            stroke(255);
         }
     }
 }

@@ -38,10 +38,10 @@ public class Updater {
         d.angle = a; // new angle stored for further iterations
 //        d.x1 = d.x1 + sketcher.cos(sketcher.radians(a));
 //        d.x2 = d.x2 + sketcher.sin(sketcher.radians(a));
-        d.x1 = d.x1 + d.length * sketcher.cos(sketcher.radians(a));
-        d.x2 = d.x2 + d.length * sketcher.sin(sketcher.radians(a));
-//        d.x1 = d.centerX + d.length * sketcher.cos(sketcher.radians(a));
-//        d.x2 = d.centerY + d.length * sketcher.sin(sketcher.radians(a));
+//        d.x1 = d.x1 + d.length * sketcher.cos(sketcher.radians(a));
+//        d.x2 = d.x2 + d.length * sketcher.sin(sketcher.radians(a));
+        d.x1 = d.centerX + d.length * sketcher.cos(sketcher.radians(a));
+        d.x2 = d.centerY + d.length * sketcher.sin(sketcher.radians(a));
     }
 
     public void updateLine(LineSegment l) {
